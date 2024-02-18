@@ -1,8 +1,22 @@
+import { useState } from "react";
+
 // eslint-disable-next-line react/prop-types
-export default function Ejercicio2({ mensaje }) {
+const Ejercicio2 = ({ mensaje }) => {
+  const [msj, setMsj] = useState("");
   return (
     <div>
-      <h1>Hola {mensaje}</h1>
+      <h1>
+        Hola {mensaje} {msj}
+      </h1>
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={() => setMsj("(Modificando el estado de un componente)")}
+      >
+        Hacer click
+      </button>
     </div>
   );
-}
+};
+
+export default Ejercicio2;
