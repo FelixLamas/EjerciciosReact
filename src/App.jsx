@@ -3,8 +3,10 @@ import ListaTareas from "./components/ListaTareas";
 import { useState } from "react";
 
 function App() {
-  const [tareas, setTareas] = useState([]);
-  console.log(tareas);
+  const [tareas, setTareas] = useState(
+    JSON.parse(localStorage.getItem("tareas")) || []
+  );
+
   return (
     <>
       <div className="container text-center pt-5">

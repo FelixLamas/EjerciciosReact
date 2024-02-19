@@ -5,6 +5,7 @@ import { useState } from "react";
 // eslint-disable-next-line react/prop-types
 const FormTareas = ({ tareas, setTareas }) => {
   const [tarea, setTarea] = useState("");
+  localStorage.setItem("tareas", JSON.stringify(tareas));
 
   return (
     <Form className="mb-4">
@@ -25,6 +26,7 @@ const FormTareas = ({ tareas, setTareas }) => {
         onClick={(e) => {
           e.preventDefault();
           setTareas([...tareas, tarea]);
+
           setTarea("");
         }}
       >
